@@ -1,9 +1,9 @@
-resource "azurerm_virtual_machine" "master1" {
+resource "azurerm_virtual_machine" "vm1" {
   name                  = var.master_vm_1
-  location              = azurerm_resource_group.kubernetes.location
-  resource_group_name   = azurerm_resource_group.kubernetes.name
-  network_interface_ids = [azurerm_network_interface.kubernetes.id]
-  vm_size               = "Standard_D2S_v3"
+  location              = azurerm_resource_group.vm.location
+  resource_group_name   = azurerm_resource_group.vm.name
+  network_interface_ids = [azurerm_network_interface.vm.id]
+  vm_size               = var.vm_size
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
   # delete_os_disk_on_termination = true
@@ -22,20 +22,19 @@ resource "azurerm_virtual_machine" "master1" {
     name              = var.master_vm_1
     caching           = "ReadWrite"
     create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
+    managed_disk_type = var.managed_disk_type
   }
 
   os_profile {
     computer_name  = var.master_vm_1
-    admin_username = "naveen"
+    admin_username = var.username
   }
   
   os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-        key_data = file("~/.ssh/id_rsa.pub")
-        path = "/home/naveen/.ssh/authorized_keys"
-
+        key_data = file(var.ssh_public_key)
+        path = var.ssh_key_target_path
     }
   }
 }
