@@ -22,5 +22,13 @@ pipeline {
             sh './terraform init'
           }
         }
+
+        stage('plan') {
+          steps {
+            sh  'ls -l'
+            sh './install.sh'
+            sh './terraform plan'
+          }
+        }
   }
 }
