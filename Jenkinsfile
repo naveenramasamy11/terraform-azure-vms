@@ -17,6 +17,7 @@ pipeline {
 
         stage('init') {
           steps {
+            sh  'ls -l'
             sh './install.sh'
             sh 'terraform init'
           }
