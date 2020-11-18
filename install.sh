@@ -9,6 +9,10 @@ echo $PATH
 ./terraform version
 echo $PATH
 
+# Install AZ tools
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 # Install jq
 wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 mv jq-linux64 jq
