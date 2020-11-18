@@ -9,12 +9,8 @@ try {
 
   stage('init') {
     node {
-      {
-        ansiColor('xterm') {
           sh 'terraform init'
-        }
-      }
-    }
+         }
   }
 }
 
