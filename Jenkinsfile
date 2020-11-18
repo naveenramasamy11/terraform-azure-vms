@@ -1,6 +1,7 @@
 // Jenkinsfile
 //try {
 stages {
+
   stage('checkout') {
     node {
       cleanWs()
@@ -16,4 +17,5 @@ stages {
       '''
     }
   }
+
 }
