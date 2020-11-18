@@ -13,6 +13,7 @@ stages {
       sh '''#!/bin/bash
       ./install.sh
       terraform init
+      '''
     }
   }
 }
