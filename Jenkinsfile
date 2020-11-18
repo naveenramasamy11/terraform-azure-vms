@@ -12,5 +12,4 @@
       sh 'terraform init'
     }
   }
-}
 
