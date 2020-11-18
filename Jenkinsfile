@@ -1,5 +1,6 @@
 // Jenkinsfile
 //try {
+stages {
   stage('checkout') {
     node {
       cleanWs()
@@ -9,8 +10,9 @@
 
   stage('init') {
     node {
-      sh './install.sh'
-      sh 'terraform init'
+      sh '''#!/bin/bash
+      ./install.sh
+      terraform init
     }
   }
-
+}
