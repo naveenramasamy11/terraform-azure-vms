@@ -1,5 +1,5 @@
 // Jenkinsfile
-try {
+//try {
   stage('checkout') {
     node {
       cleanWs()
@@ -9,8 +9,8 @@ try {
 
   stage('init') {
     node {
-          sh 'terraform init'
-         }
+      sh 'terraform init'
+    }
   }
 }
 
