@@ -1,6 +1,5 @@
 // Jenkinsfile
 //try {
-stages {
 
   stage('checkout') {
     node {
@@ -18,4 +17,3 @@ stages {
     }
   }
 
-}
