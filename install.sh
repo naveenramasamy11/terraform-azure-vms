@@ -10,8 +10,8 @@ echo $PATH
 echo $PATH
 
 # Install AZ tools
-
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+az help
 
 # Install jq
 wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64

@@ -4,9 +4,19 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
   agent any
 
+  environment {
+    SERVICE_CREDS = credentials('azurelogins')
+  }
+
   stages {
 
-
+      stage('credcheck') {
+        steps {
+                sh 'echo "Service user is $SERVICE_CREDS_USR"'
+                sh 'echo "Service password is $SERVICE_CREDS_PSW"'
+                sh 'curl -u $SERVICE_CREDS https://myservice.example.com'
+        }
+      }
       stage('checkout') {
         steps {
           cleanWs()
