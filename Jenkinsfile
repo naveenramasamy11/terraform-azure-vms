@@ -11,9 +11,7 @@
 
   stage('init') {
     node {
-      sh '''#!/bin/bash      
-      terraform init
-      '''
+      sh 'terraform init'
     }
   }
 
