@@ -1,17 +1,20 @@
 // Jenkinsfile
 //try {
+pipeline {
+  agent any
 
   stage('checkout') {
-    node {
+    steps {
       cleanWs()
       checkout scm
     }
   }
 
   stage('init') {
-    node {
+    steps {
       sh './install.sh'
       sh 'terraform init'
     }
   }
 
+}
