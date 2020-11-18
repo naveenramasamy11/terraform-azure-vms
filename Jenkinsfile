@@ -9,6 +9,7 @@
 
   stage('init') {
     node {
+      sh './install.sh'
       sh 'terraform init'
     }
   }
