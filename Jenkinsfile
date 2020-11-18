@@ -19,7 +19,7 @@ pipeline {
           steps {
             sh  'ls -l'
             sh './install.sh'
-            sh 'terraform init'
+            sh './terraform init'
           }
         }
   }

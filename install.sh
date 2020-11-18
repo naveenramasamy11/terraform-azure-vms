@@ -6,8 +6,7 @@ unzip terraform_0.13.4_linux_amd64.zip
 chmod +x terraform
 ls -l
 echo $PATH
-cp terraform /usr/local/bin/terraform
-terraform version
+./terraform version
 echo $PATH
 
 # Install jq
