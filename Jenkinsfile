@@ -5,12 +5,12 @@
     node {
       cleanWs()
       checkout scm
-      ./install.sh
     }
   }
 
   stage('init') {
     node {
+      sh './install.sh'
       sh 'terraform init'
     }
   }
