@@ -4,7 +4,8 @@
 wget https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip
 unzip terraform_0.13.4_linux_amd64.zip
 chmod +x terraform
-sudo cp terraform /usr/bin/terraform
+ls -l
+cp terraform /usr/local/bin/terraform
 terraform version
 echo $PATH
 
