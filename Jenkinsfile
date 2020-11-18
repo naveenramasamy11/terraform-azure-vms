@@ -10,11 +10,13 @@ pipeline {
     }
   }
 
-  stage('init') {
-    steps {
-      sh './install.sh'
-      sh 'terraform init'
+  stages {
+
+    stage('init') {
+      steps {
+        sh './install.sh'
+        sh 'terraform init'
+      }
     }
   }
-
 }
